@@ -13,5 +13,41 @@ package q2
 //Ajude os amigos a encontrar o número de problemas para os quais eles escreverão uma solução.
 
 func ProblemsSolved(answers [][3]bool) int {
-	return 0
+
+	//questoes respondidas
+	questoesRespondidas := 0
+
+	//para percorrer as linhas da matriz
+	for i := 0; i < len(answers); i++ {
+
+		//quantidade de respostas
+		n := 0
+
+		//para percorrer as colunas da matriz
+		for j := 0; j < 3; j++ {
+
+			//se o valor na posição answers[i][j] for igual a falso
+			if !answers[i][j] {
+
+				continue
+
+			} else {
+
+				//adiciona 1 as respostas para linha
+				n++
+
+			}
+
+		}
+
+		if n >= 2 {
+
+			questoesRespondidas++
+
+		}
+
+	}
+
+	return questoesRespondidas
+
 }
